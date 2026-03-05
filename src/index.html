@@ -8,10 +8,12 @@
   <link rel="shortcut-icon" href="./favicon.ico" type="image/x-icon">
   <link rel="shortcut-icon" href="./images/favicon.png" type="image/png">
   <!-- Styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="./css/desktop-states.css" media="(min-width: 769px)">
   <link rel="stylesheet" href="./css/mobile-states.css" media="(max-width: 768px)">
   <link rel="stylesheet" href="./css/index.css">
   <!-- Scripts -->
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <script type="module" src="./js/index.js"></script>
 </head>
 <body>
@@ -19,13 +21,1269 @@
 
   <div class="page-wrapper">
 
-    <header class="header"></header>
+    <header class="header colored-bg">
+
+      <nav class="navbar">
+
+        <div class="navbar__top">
+
+          <div class="navbar__info">
+
+            <a href="./index.html" class="logotype navbar__logotype">
+              <img src="./images/icons/logo.svg" alt="GG Promarket" class="logotype__icon">
+            </a>
+
+            <div class="location navbar__location">
+
+              <button class="location__trigger">
+                <span class="location__trigger-text normal-text">Киев</span>
+              </button>
+
+              <div class="location__body">
+
+                <p class="location__title bold-text">Выберите область</p>
+
+                <button class="location__button">
+                  <img src="./images/preloader.svg" alt="Loading..." class="location__button-preloader">
+                  <svg class="location__button-icon">
+                    <use xlink:href="./images/sprite.svg#target"></use>
+                  </svg>
+                  <span class="location__button-text semi-text">Определить автоматически</span>
+                </button>
+
+                <div class="location__variants">
+
+                  <button class="location__variant var-text" id="krim">АР Крым</button>
+                  <button class="location__variant var-text" id="vin">Винницкая</button>
+                  <button class="location__variant var-text" id="vol">Волынская</button>
+                  <button class="location__variant var-text" id="dnep">Днепропетровская</button>
+                  <button class="location__variant var-text" id="don">Донецкая</button>
+                  <button class="location__variant var-text" id="jhit">Житомирская</button>
+                  <button class="location__variant var-text" id="zak">Закарпатская</button>
+                  <button class="location__variant var-text" id="zap">Запорожская</button>
+                  <button class="location__variant var-text" id="ivan">Ивано-Франковская</button>
+                  <button class="location__variant var-text" id="kyiv">Киевская</button>
+                  <button class="location__variant var-text" id="kir">Кировоградская</button>
+                  <button class="location__variant var-text" id="lug">Луганская</button>
+                  <button class="location__variant var-text" id="lviv">Львовская</button>
+                  <button class="location__variant var-text" id="nikol">Николаевская</button>
+                  <button class="location__variant var-text" id="odesa">Одесская</button>
+                  <button class="location__variant var-text" id="polt">Полтавская</button>
+                  <button class="location__variant var-text" id="rovn">Ровненская</button>
+                  <button class="location__variant var-text" id="sum">Сумская</button>
+                  <button class="location__variant var-text" id="tern">Тернопольская</button>
+                  <button class="location__variant var-text" id="hark">Харьковская</button>
+                  <button class="location__variant var-text" id="hers">Херсонская</button>
+                  <button class="location__variant var-text" id="hmel">Хмельницкая</button>
+                  <button class="location__variant var-text" id="cherk">Черкасская</button>
+                  <button class="location__variant var-text" id="chernig">Черниговская</button>
+                  <button class="location__variant var-text" id="chern">Черновицкая</button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="phone-select navbar__phone-select">
+
+              <div class="phone-select__main">
+
+                <div class="phone-select__controls">
+                  <a href="tel:+380657976856" class="phone-select__link tel-text">+38 (065) 797-68-56</a>
+                  <button class="phone-select__trigger"></button>
+                </div>
+
+                <ul class="phone-select__list">
+
+                  <li class="phone-select__li">
+                    <a href="tel:+380956562145" class="phone-select__link tel-text">+38 (095) 656-21-45</a>
+                  </li>
+
+                  <li class="phone-select__li">
+                    <a href="tel:+380752565115" class="phone-select__link tel-text">+38 (075) 256-51-15</a>
+                  </li>
+
+                  <li class="phone-select__li">
+                    <a href="tel:+380321788756" class="phone-select__link tel-text">+38 (032) 178-87-56</a>
+                  </li>
+
+                </ul>
+
+              </div>
+
+              <button class="phone-select__button normal-text" data-popup="popup--call">Заказать звонок</button>
+
+            </div>
+
+          </div>
+
+          <ul class="nav-links navbar__nav-links">
+
+            <li class="nav-links__li">
+              <a href="#collection" class="nav-links__link normal-text">Коллекции</a>
+            </li>
+
+            <li class="nav-links__li">
+              <a href="#hits" class="nav-links__link normal-text">Хиты</a>
+            </li>
+
+            <li class="nav-links__li">
+              <a href="#articles" class="nav-links__link normal-text">Статьи</a>
+            </li>
+
+            <li class="nav-links__li">
+              <a href="#about" class="nav-links__link normal-text">О нас</a>
+            </li>
+
+            <li class="nav-links__li">
+              <a href="#contacts" class="nav-links__link normal-text">Контакты</a>
+            </li> 
+
+          </ul>
+          
+        </div>
+
+        <div class="navbar__bot">
+
+          <div class="navbar__links">
+
+            <button class="button navbar__button" data-cat-trig>
+
+              <span class="button__burger">
+                <span class="button__burger-line"></span>
+                <span class="button__burger-line"></span>
+                <span class="button__burger-line"></span>
+              </span>
+
+              <span class="button__text semi-text">Каталог товаров</span>
+
+            </button>
+
+            <a href="#discont" class="button navbar__button navbar__button--light">
+              <span class="button__text semi-text">Акции</span>
+            </a>
+
+            <a href="#brands" class="button navbar__button navbar__button--lighter">
+              <span class="button__text semi-text">Бренды</span>
+            </a>
+
+          </div>
+
+          <form action="#" class="search navbar__search" novalidate>
+
+            <input type="search" class="search__input semi-text" autocomplete="off" placeholder="Что вы ищете?">
+            <button type="submit" class="search__submit"></button>
+
+            <div class="search-menu search__search-menu">
+
+              <div class="search-menu__variants"></div>
+
+              <div class="search-menu__popular">
+
+                <p class="search-menu__popular-title semi-text">Популярные запросы</p>
+
+                <a href="./404.html" target="_blank" class="search-menu__link semi-text">Раковина</a>
+                <a href="./404.html" target="_blank" class="search-menu__link semi-text">Унитаз</a>
+                <a href="./404.html" target="_blank" class="search-menu__link semi-text">Биде</a>
+                <a href="./404.html" target="_blank" class="search-menu__link semi-text">Сушилка</a>
+                <a href="./404.html" target="_blank" class="search-menu__link semi-text">Трап</a>
+                <a href="./404.html" target="_blank" class="search-menu__link semi-text">Ванна</a>
+                <a href="./404.html" target="_blank" class="search-menu__link semi-text">Смеситель</a>
+                <a href="./404.html" target="_blank" class="search-menu__link semi-text">Умывальник</a>
+                <a href="./404.html" target="_blank" class="search-menu__link semi-text">Плитка</a>
+                <a href="./404.html" target="_blank" class="search-menu__link semi-text">Душевая кабинка</a>
+                <a href="./404.html" target="_blank" class="search-menu__link semi-text">Писуар</a>
+
+              </div>
+
+            </div>
+
+          </form>
+
+          <div class="navbar__controls">
+
+            <a href="./404.html" class="cont-link">
+              <span class="cont-link__counter small-text active">22</span>
+              <svg class="cont-link__icon">
+                <use xlink:href="./images/sprite.svg#user"></use>
+              </svg>
+            </a>
+
+            <a href="./404.html" class="cont-link">
+              <span class="cont-link__counter small-text"></span>
+              <svg class="cont-link__icon">
+                <use xlink:href="./images/sprite.svg#favor"></use>
+              </svg>
+            </a>
+
+            <a href="./404.html" class="cont-link">
+              <span class="cont-link__counter small-text"></span>
+              <svg class="cont-link__icon">
+                <use xlink:href="./images/sprite.svg#cart"></use>
+              </svg>
+            </a>
+
+          </div>
+
+          <div class="catalog navbar__catalog">
+
+            <ul class="catalog__list">
+
+              <li class="catalog__li" tabindex="0" data-target="bathrooms">
+                <svg class="catalog__li-icon">
+                  <use xlink:href="./images/sprite.svg#bathroom"></use>
+                </svg>
+                <span class="catalog__li-text semi-text">Коллекции ванных комнат</span>
+              </li>
+
+              <li class="catalog__li" tabindex="0" data-target="basin">
+                <svg class="catalog__li-icon">
+                  <use xlink:href="./images/sprite.svg#washer"></use>
+                </svg>
+                <span class="catalog__li-text semi-text">Умывальники и пьедесталы</span>
+              </li>
+
+              <li class="catalog__li" tabindex="0" data-target="toilet">
+                <svg class="catalog__li-icon">
+                  <use xlink:href="./images/sprite.svg#toilet"></use>
+                </svg>
+                <span class="catalog__li-text semi-text">Унитазы, биде и писуары</span>
+              </li>
+
+              <li class="catalog__li" tabindex="0" data-target="install">
+                <svg class="catalog__li-icon">
+                  <use xlink:href="./images/sprite.svg#install"></use>
+                </svg>
+                <span class="catalog__li-text semi-text">Инсталяционные системы</span>
+              </li>
+
+              <li class="catalog__li" tabindex="0" data-target="furniture">
+                <svg class="catalog__li-icon">
+                  <use xlink:href="./images/sprite.svg#mebel"></use>
+                </svg>
+                <span class="catalog__li-text semi-text">Мебель для ванной комнаты</span>
+              </li>
+
+              <li class="catalog__li" tabindex="0" data-target="bath">
+                <svg class="catalog__li-icon">
+                  <use xlink:href="./images/sprite.svg#bath"></use>
+                </svg>
+                <span class="catalog__li-text semi-text">Ванны</span>
+              </li>
+
+              <li class="catalog__li" tabindex="0" data-target="cabine">
+                <svg class="catalog__li-icon">
+                  <use xlink:href="./images/sprite.svg#bathcabine"></use>
+                </svg>
+                <span class="catalog__li-text semi-text">Душевые кабинки</span>
+              </li>
+
+              <li class="catalog__li" tabindex="0" data-target="pallet">
+                <svg class="catalog__li-icon">
+                  <use xlink:href="./images/sprite.svg#poddon"></use>
+                </svg>
+                <span class="catalog__li-text semi-text">Душевые поддоны</span>
+              </li>
+
+              <li class="catalog__li" tabindex="0" data-target="mixer">
+                <svg class="catalog__li-icon">
+                  <use xlink:href="./images/sprite.svg#mixer"></use>
+                </svg>
+                <span class="catalog__li-text semi-text">Смесители</span>
+              </li>
+
+              <li class="catalog__li" tabindex="0" data-target="trap">
+                <svg class="catalog__li-icon">
+                  <use xlink:href="./images/sprite.svg#trap"></use>
+                </svg>
+                <span class="catalog__li-text semi-text">Линейные трапы</span>
+              </li>
+
+              <li class="catalog__li" tabindex="0" data-target="ceramic">
+                <svg class="catalog__li-icon">
+                  <use xlink:href="./images/sprite.svg#plitka"></use>
+                </svg>
+                <span class="catalog__li-text semi-text">Керамическая плитка</span>
+              </li>
+              
+            </ul>
+
+            <div class="catalog__body">
+
+              <article class="cat-desc catalog__cat-desc" data-desc="bathrooms">
+
+                <h2 class="cat-desc__title bold-text">Коллекции ванных комнат</h2>
+
+                <ul class="cat-desc__list">
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Коллекции концептов</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Коллекции керамики для ванных комнат</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Коллекции душевых кабин</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Коллекции душевых поддонов</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Линейные трапы</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Системы инсталляций</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Коллекции кнопок смыва</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Коллекции ванн</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Коллекции мебели для ванных комнат</a>
+                  </li>
+
+                </ul>
+
+                <picture>
+                  <source srcset="./images/pictures/bathroom-collection.webp" type="image/webp">
+                  <img src="./images/pictures/bathroom-collection.jpg" alt="Коллекции ванных комнат" class="cat-desc__img">
+                </picture>
+
+                <div class="cat-desc__partners">
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/cersanit.png" alt="Cersanit" class="cat-desc__partner-icon">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/alca.png" alt="Alca" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/duka.png" alt="Duka" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/hansgrohe.png" alt="Hansgrohe" class="cat-desc__partner">
+                  </a>
+
+                </div>
+
+              </article>
+
+              <article class="cat-desc catalog__cat-desc" data-desc="basin">
+
+                <h2 class="cat-desc__title bold-text">Умывальники и пьедесталы</h2>
+
+                <ul class="cat-desc__list">
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Умывальники на столешницу</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Встроенные умывальники</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Мебельные умывальники</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Подвесные умывальники</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Пьедесталы и полу-пьедесталы</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Донные клапаны для умывальника</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Сифоны для умывальника</a>
+                  </li>
+
+                </ul>
+
+                <picture>
+                  <source srcset="./images/pictures/washer-pic.webp" type="image/webp">
+                  <img src="./images/pictures/washer-pic.jpg" alt="Умывальники и пьедесталы" class="cat-desc__img">
+                </picture>
+
+                <div class="cat-desc__partners">
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/flaminia.png" alt="Flaminia" class="cat-desc__partner-icon">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/duravit.png" alt="Duravit" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/geberit.png" alt="Geberit" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/cersanit.png" alt="Cersanit" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/jado.png" alt="Jado" class="cat-desc__partner">
+                  </a>
+
+                </div>
+
+              </article>
+
+              <article class="cat-desc catalog__cat-desc" data-desc="toilet">
+
+                <h2 class="cat-desc__title bold-text">Унитазы, биде и писсуары</h2>
+
+                <ul class="cat-desc__list">
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Подвесные унитазы</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Подвесные унитазы Vortex</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Подвесные унитазы CleanOn</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Подвесные унитазы SimpleOn</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Компакты</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Компакты безобедочные CleanOn</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Компакты SimpleOn</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Туалетные сиденья</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Биде</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Писсуары</a>
+                  </li>
+
+                </ul>
+
+                <picture>
+                  <source srcset="./images/pictures/toilet-pic.webp" type="image/webp">
+                  <img src="./images/pictures/toilet-pic.jpg" alt="Унитазы, биде и писсуары" class="cat-desc__img">
+                </picture>
+
+                <div class="cat-desc__partners">
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/duscholux.png" alt="Duscholux" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/cersanit.png" alt="Cersanit" class="cat-desc__partner-icon">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/grohe.png" alt="Grohe" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/paffoni.png" alt="Paffoni" class="cat-desc__partner">
+                  </a>
+
+                </div>
+
+              </article>
+
+              <article class="cat-desc catalog__cat-desc" data-desc="install">
+
+                <h2 class="cat-desc__title bold-text">Установочные системы</h2>
+
+                <ul class="cat-desc__list">
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Установочные системы</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Наборы каркасов</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Запасные части</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Механические переключатели</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Пневматические переключатели</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Монтажные материалы</a>
+                  </li>
+
+                </ul>
+
+                <picture>
+                  <source srcset="./images/pictures/install.webp" type="image/webp">
+                  <img src="./images/pictures/install.jpg" alt="Установочные системы" class="cat-desc__img">
+                </picture>
+
+                <div class="cat-desc__partners">
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/dornbracht.png" alt="Dornbacht" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/gessi.png" alt="Gessi" class="cat-desc__partner-icon">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/dyson.png" alt="Dyson" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/roca.png" alt="Roca" class="cat-desc__partner">
+                  </a>
+
+                </div>
+
+              </article>
+
+              <article class="cat-desc catalog__cat-desc" data-desc="furniture">
+
+                <h2 class="cat-desc__title bold-text">Мебель для ванной комнаты</h2>
+
+                <ul class="cat-desc__list">
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Шкафчики для умывальника</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Шкафчики под столешницу</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Шкафчики-зеркало</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Навесные шкафчики</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Пеналы и полу-пеналы</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Мебельные ручки</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Столешницы</a>
+                  </li>
+
+                </ul>
+
+                <picture>
+                  <source srcset="./images/pictures/mebel.webp" type="image/webp">
+                  <img src="./images/pictures/mebel.jpg" alt="Мебель для ванной комнаты" class="cat-desc__img">
+                </picture>
+
+                <div class="cat-desc__partners">
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/miraggio.svg" alt="Miraggio" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/jado.png" alt="Jado" class="cat-desc__partner-icon">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/kerasan.png" alt="Kerasan" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/villeroy.png" alt="VileroyBoch" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/vitra.png" alt="Vitra" class="cat-desc__partner">
+                  </a>
+
+                </div>
+
+              </article>
+
+              <article class="cat-desc catalog__cat-desc" data-desc="bath">
+
+                <h2 class="cat-desc__title bold-text">Ванны</h2>
+
+                <ul class="cat-desc__list">
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Асимметричные ванны</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Прямоугольные ванны</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Отдельностоящие ванны</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Симметричные ванны</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Панели</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Шторки для ванной</a>
+                  </li>
+
+                </ul>
+
+                <picture>
+                  <source srcset="./images/pictures/vanna.webp" type="image/webp">
+                  <img src="./images/pictures/vanna.jpg" alt="Ванны" class="cat-desc__img">
+                </picture>
+
+                <div class="cat-desc__partners">
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/duravit.png" alt="Duravit" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/geberit.png" alt="Geberit" class="cat-desc__partner-icon">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/jado.png" alt="Jado" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/roca.png" alt="Roca" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/flaminia.png" alt="Flaminia" class="cat-desc__partner">
+                  </a>
+
+                </div>
+
+              </article>
+
+              <article class="cat-desc catalog__cat-desc" data-desc="cabine">
+
+                <h2 class="cat-desc__title bold-text">Душевые кабины</h2>
+
+                <ul class="cat-desc__list">
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Кабины квадратные</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Кабины полукруглые</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Кабины прямоугольные</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Симметричные ванны</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Кабины пятиугольные</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Кабины Walk-in</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Стенки для душевых кабин</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Душевые двери</a>
+                  </li>
+
+                </ul>
+
+                <picture>
+                  <source srcset="./images/pictures/bathbox.webp" type="image/webp">
+                  <img src="./images/pictures/bathbox.jpg" alt="Душевые кабины" class="cat-desc__img">
+                </picture>
+
+                <div class="cat-desc__partners">
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/duka.png" alt="Duka" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/geberit.png" alt="Geberit" class="cat-desc__partner-icon">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/jado.png" alt="Jado" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/vitra.png" alt="Vitra" class="cat-desc__partner">
+                  </a>
+
+                </div>
+
+              </article>
+
+              <article class="cat-desc catalog__cat-desc" data-desc="pallet">
+
+                <h2 class="cat-desc__title bold-text">Душевые поддоны</h2>
+
+                <ul class="cat-desc__list">
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Поддоны квадратные</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Поддоны полукруглые</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Поддоны прямоугольные</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Поддоны пластиковые</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Поддоны керамические</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Поддоны металлические</a>
+                  </li>
+
+                </ul>
+
+                <picture>
+                  <source srcset="./images/pictures/pallete.webp" type="image/webp">
+                  <img src="./images/pictures/pallete.jpg" alt="Душевые поддоны" class="cat-desc__img">
+                </picture>
+
+                <div class="cat-desc__partners">
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/cersanit.png" alt="Cersanit" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/dyson.png" alt="Dyson" class="cat-desc__partner-icon">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/kerasan.png" alt="Kerasan" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/roca.png" alt="Roca" class="cat-desc__partner">
+                  </a>
+
+                </div>
+
+              </article>
+
+              <article class="cat-desc catalog__cat-desc" data-desc="mixer">
+
+                <h2 class="cat-desc__title bold-text">Смесители</h2>
+
+                <ul class="cat-desc__list">
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Смесители для умывальника</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Смесители для ванны-душа</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Смесители для душа</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Смесители для биде</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Гигиенический душ</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Смесители скрытого монтажа</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Душевые наборы</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Душевые колонны</a>
+                  </li>
+
+                </ul>
+
+                <picture>
+                  <source srcset="./images/pictures/mixer.webp" type="image/webp">
+                  <img src="./images/pictures/mixer.jpg" alt="Смесители" class="cat-desc__img">
+                </picture>
+
+                <div class="cat-desc__partners">
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/cersanit.png" alt="Cersanit" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/duravit.png" alt="Duravit" class="cat-desc__partner-icon">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/roca.png" alt="Roca" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/flaminia.png" alt="Flaminia" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/geberit.png" alt="Geberit" class="cat-desc__partner">
+                  </a>
+
+                </div>
+
+              </article>
+
+              <article class="cat-desc catalog__cat-desc" data-desc="trap">
+
+                <h2 class="cat-desc__title bold-text">Линейные трапы</h2>
+
+                <ul class="cat-desc__list">
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">С двухсторонней решеткой</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Настенный</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Щелевой</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Моноблочный</a>
+                  </li>
+
+                </ul>
+
+                <picture>
+                  <source srcset="./images/pictures/trap.webp" type="image/webp">
+                  <img src="./images/pictures/trap.jpg" alt="Линейные трапы" class="cat-desc__img">
+                </picture>
+
+                <div class="cat-desc__partners">
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/gessi.png" alt="Gessi" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/jado.png" alt="Jado" class="cat-desc__partner-icon">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/grohe.png" alt="Grohe" class="cat-desc__partner">
+                  </a>
+
+                </div>
+
+              </article>
+
+              <article class="cat-desc catalog__cat-desc" data-desc="ceramic">
+
+                <h2 class="cat-desc__title bold-text">Керамическая плитка</h2>
+
+                <ul class="cat-desc__list">
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Плитка настенная</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Напольная плитка</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Плитка универсальная</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Бордюры и декорации</a>
+                  </li>
+
+                  <li class="cat-desc__li">
+                    <a href="./404.html" target="_blank" class="cat-desc__link semi-text">Стеклянные декорации</a>
+                  </li>
+
+                </ul>
+
+                <picture>
+                  <source srcset="./images/pictures/plitka.webp" type="image/webp">
+                  <img src="./images/pictures/plitka.jpg" alt="Керамическая плитка" class="cat-desc__img">
+                </picture>
+
+                <div class="cat-desc__partners">
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/kerasan.png" alt="Kerasan" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/paffoni.png" alt="Paffoni" class="cat-desc__partner-icon">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/miraggio.svg" alt="Miraggio" class="cat-desc__partner">
+                  </a>
+
+                  <a href="./404.html" target="_blank" class="cat-desc__partner">
+                    <img src="./images/icons/duscholux.png" alt="Duscholux" class="cat-desc__partner">
+                  </a>
+
+                </div>
+
+              </article>
+
+            </div>
+
+          </div>
+
+        </div>
+        
+      </nav>
+
+      <div class="intro header__intro">
+
+        <div class="solo-slider intro__solo-slider swiper" id="intSlider">
+
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+
+              <article class="solo-slider__slide">
+
+                <picture>
+                  <source srcset="./images/pictures/mixer1.webp" type="image/webp">
+                  <img src="./images/pictures/mixer1.png" alt="Смеситель" class="solo-slider__img">
+                </picture>
+
+                <div class="solo-slider__main">
+
+                  <h2 class="solo-slider__title big-text">Смесители Cersanit</h2>
+                  <p class="solo-slider__text bold-text">уже в наличии</p>
+                  <a href="./404.html" target="_blank" class="solo-slider__link normal-text">Подробнее</a>
+
+                </div>
+
+              </article>
+
+            </div>
+
+            <div class="swiper-slide">
+
+              <article class="solo-slider__slide">
+
+                <img src="./images/pictures/dish.png" alt="Раковина" class="solo-slider__img">
+
+                <div class="solo-slider__main">
+
+                  <h2 class="solo-slider__title big-text">Раковины Estera</h2>
+                  <p class="solo-slider__text bold-text">уже в наличии</p>
+                  <a href="./404.html" target="_blank" class="solo-slider__link normal-text">Подробнее</a>
+
+                </div>
+
+              </article>
+
+            </div>
+
+            <div class="swiper-slide">
+
+              <article class="solo-slider__slide">
+
+                <img src="./images/pictures/sifon.png" alt="Сифон" class="solo-slider__img">
+
+                <div class="solo-slider__main">
+
+                  <h2 class="solo-slider__title big-text">Сифоны Grohe</h2>
+                  <p class="solo-slider__text bold-text">уже в наличии</p>
+                  <a href="./404.html" target="_blank" class="solo-slider__link normal-text">Подробнее</a>
+
+                </div>
+
+              </article>
+
+            </div>
+
+            <div class="swiper-slide">
+
+              <article class="solo-slider__slide">
+
+                <picture>
+                  <source srcset="./images/pictures/mixer2.webp" type="image/webp">
+                  <img src="./images/pictures/mixer2.png" alt="Смеситель" class="solo-slider__img">
+                </picture>
+
+                <div class="solo-slider__main">
+
+                  <h2 class="solo-slider__title big-text">Смесители Roca</h2>
+                  <p class="solo-slider__text bold-text">уже в наличии</p>
+                  <a href="./404.html" target="_blank" class="solo-slider__link normal-text">Подробнее</a>
+
+                </div>
+
+              </article>
+
+            </div>
+
+            <div class="swiper-slide">
+
+              <article class="solo-slider__slide">
+
+                <img src="./images/pictures/waterfall.png" alt="Излив" class="solo-slider__img">
+
+                <div class="solo-slider__main">
+
+                  <h2 class="solo-slider__title big-text">Изливы Dyson</h2>
+                  <p class="solo-slider__text bold-text">уже в наличии</p>
+                  <a href="./404.html" target="_blank" class="solo-slider__link normal-text">Подробнее</a>
+
+                </div>
+
+              </article>
+
+            </div>
+
+          </div>
+
+          <div class="solo-slider__controls">
+
+            <button class="solo-slider__btn solo-slider__btn--prev">
+              <svg class="solo-slider__btn-icon">
+                <use xlink:href="./images/sprite.svg#arrow"></use>
+              </svg>
+            </button>
+
+            <div class="solo-slider__pagination"></div>
+
+            <button class="solo-slider__btn solo-slider__btn--next">
+              <svg class="solo-slider__btn-icon">
+                <use xlink:href="./images/sprite.svg#arrow"></use>
+              </svg>
+            </button>
+
+          </div>
+
+        </div>
+
+        <a href="./404.html" target="_blank" class="detail-link intro__detail-link">
+
+          <picture>
+            <source srcset="./images/pictures/washer.webp" type="image/webp">
+            <img src="./images/pictures/washer.png" alt="Раковина" class="detail-link__img">
+          </picture>
+
+          <span class="detail-link__body">                                   
+            <strong class="detail-link__title bold-text">Раковины до 7 000 ₴</strong>
+            <span class="detail-link__text mid-text">Подробнее</span>
+          </span>
+
+        </a>
+        
+        <a href="./404.html" target="_blank" class="detail-link intro__detail-link intro__detail-link--green">
+
+          <picture>
+            <source srcset="./images/pictures/toilet.webp" type="image/webp">
+            <img src="./images/pictures/toilet.png" alt="Унитаз" class="detail-link__img">
+          </picture>
+
+          <span class="detail-link__body">                                   
+            <strong class="detail-link__title bold-text">Унитазы до 9 000 ₴</strong>
+            <span class="detail-link__text mid-text">Подробнее</span>
+          </span>
+
+        </a>
+
+      </div>
+
+      <div class="advantages">
+
+        <div class="advantage">
+          <img src="./images/icons/delivery.svg" alt="Доставка" class="advantage__icon">
+          <strong class="advantage__text normal-text">Быстрая доставка по Киеву и в любую область Украины</strong>
+        </div>
+
+        <div class="advantage">
+          <img src="./images/icons/garanty.svg" alt="Гарантия" class="advantage__icon">
+          <strong class="advantage__text normal-text">Все товары имеют официальную гарантию производителя</strong>
+        </div>
+
+        <div class="advantage">
+          <img src="./images/icons/goods.svg" alt="Товары" class="advantage__icon">
+          <strong class="advantage__text normal-text">Более 100 000 товаров</strong>
+        </div>
+
+        <div class="advantage">
+          <img src="./images/icons/payment.svg" alt="Оплата" class="advantage__icon">
+          <strong class="advantage__text normal-text">Любой способ оплаты</strong>
+        </div>
+
+        <div class="advantage">
+          <img src="./images/icons/like.png" alt="Оценка" class="advantage__icon">
+          <strong class="advantage__text normal-text">Высокие оценки клиентов</strong>
+        </div>
+
+      </div>
+
+    </header>
 
     <main class="main"></main>
 
     <footer class="footer"></footer>
 
   </div>
+
+  <div class="notice">
+
+    <div class="notice__content">
+
+      <img src="./images/icons/success.svg" alt="success" class="notice__img">
+
+      <div class="notice__main">
+        <span class="notice__title bold-text"></span>
+        <span class="notice__text mid-text"></span>
+      </div>
+
+    </div>
+
+    <div class="notice__progress">
+      <div class="notice__progress-line"></div>
+    </div>
+
+  </div>
+
+  <dialog class="popup popup--call">
+
+    <div class="popup__header">
+
+      <a href="./index.html" class="logotype popup__logotype">
+        <img src="./images/icons/logo.svg" alt="GG Promarket" class="logotype__icon">
+      </a>
+
+      <button class="popup__close-btn" data-popup-close>&times;</button>
+
+    </div>
+
+    <p class="popup__title semi-text">Оставьте ваши контактные данные и наш менеджер свяжется с вами в течение 5 минут</p>
+
+    <form action="#" class="popup__body" novalidate data-form>
+
+      <fieldset class="input-area">
+
+        <div class="input-area__wrapper">
+          <input type="text" id="name" class="input-area__input semi-text" autocomplete="off" maxlength="100" data-validate>
+          <label for="name" class="input-area__label mid-text">Ваше имя</label>
+        </div>
+        
+        <span class="input-area__warning mid-text" data-warn="name">awdadadd</span>
+
+      </fieldset>
+
+      <fieldset class="input-area">
+
+        <div class="input-area__wrapper">
+          <input type="tel" id="phone" class="input-area__input semi-text" autocomplete="off" data-validate>
+          <label for="phone" class="input-area__label mid-text">Номер телефона</label>
+        </div>
+        
+        <span class="input-area__warning mid-text" data-warn="phone">awdadadd</span>
+
+      </fieldset>
+
+      <fieldset class="popup__agree">
+
+        <input type="checkbox" id="agree" class="popup__checkbox" data-validate>
+        <label for="agree" class="popup__checkbox-label" data-warn="agree" tabindex="0"></label>
+        <span class="popup__agreement mid-text">Даю согласие на обработку персональных данных и соглашаюсь с <a href="./404.html" target="_blank" class="popup__link">Политикой конфиденциальности</a></span>
+
+      </fieldset>
+
+      <fieldset class="popup__controls">
+        <button class="popup__button popup__button--reset semi-text" data-popup-close type="button">Отмена</button>
+        <button class="popup__button popup__button--submit semi-text" type="submit">Отправить</button>
+      </fieldset>
+
+    </form>
+
+  </dialog>
 
 
 

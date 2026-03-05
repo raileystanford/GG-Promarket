@@ -1,3 +1,539 @@
 @use './modules/_variables.scss' as var;
 @use './modules/_templates.scss' as *;
 @use './modules/_mixins.scss' as mix;
+
+.logotype {
+  will-change: transform;
+  transition: all 0.2s;
+
+  &:hover, &:focus {
+    transform: scale(1.03);
+  }
+
+  &:active {
+    transition: all 0.07s;
+    transform: scale(0.95);
+  }
+}
+
+.location__trigger {
+  will-change: transform;
+  transition: all 0.2s;
+
+  .location__trigger-text {
+    transition: all 0.15s;
+  }
+
+  &::before {
+    will-change: transform;
+  }
+
+  &:hover, &:focus {
+
+    &:not(.active)::before {
+      animation: jump 0.35s;
+    }
+
+    .location__trigger-text {
+      color: var.$deep-blue;
+      border-color: var.$deep-blue;
+    }
+  }
+
+  @keyframes jump {
+    0%{ transform: translateY(0px) scale(1); }
+    50%{ transform: translateY(-6px) scale(1.1); }
+    100%{ transform: translateY(0px) scale(1); }
+  }
+}
+
+.location__button {
+  will-change: transform;
+  transition: all 0.2s;
+
+  &-text, &-icon {
+    transition: all 0.2s;
+  }
+
+  &:not([disabled], .blocked) {
+
+    &:hover, &:focus {
+      background: var.$deep-blue;
+      border-color: var.$deep-blue;
+
+      .location__button-icon {
+        fill: var.$white;
+      }
+
+      .location__button-text {
+        color: var.$white;
+      }
+    }
+
+    &:active {
+      transition: all 0.05s;
+      transform: scale(0.98);
+    }
+
+  }
+}
+
+.location__variant {
+  will-change: transform;
+  transition: all 0.15s;
+  text-decoration: underline transparent;
+
+  &:hover, &:focus {
+    text-decoration: underline;
+    color: var.$deep-blue;
+  }
+
+  &:active {
+    transition: all 0.05s;
+    transform: scale(0.95);
+  }
+}
+
+.phone-select__link {
+  transition: all 0.15s;
+  text-decoration: underline transparent;
+
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+
+  &:active {
+    transition: all 0.07s;
+    color: var.$blue;
+  }
+}
+
+.phone-select__trigger {
+  will-change: transform;
+  transition: all 0.15s;
+
+  &:hover, &:focus {
+    transform: scale(1.2);
+  }
+
+  &:active {
+    transition: all 0.07s;
+    transform: scale(0.95);
+  }
+}
+
+.phone-select__button {
+  will-change: transform;
+  transition: all 0.15s;
+
+  &:hover, &:focus {
+    transform: scale(1.03);
+    color: var.$deep-blue;
+    border-color: var.$deep-blue;
+  }
+
+  &:active {
+    transition: all 0.06s;
+    transform: scale(0.95);
+  }
+}
+
+.nav-links__link {
+  will-change: transform;
+  position: relative;
+  transition: all 0.2s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var.$deep-blue;
+    border-radius: 10px;
+    transition: all 0.2s;
+  }
+
+  &:hover, &:focus {
+    color: var.$deep-blue;
+
+    &::before {
+      width: 100%;
+    }
+  }
+
+  &:active {
+    transition: all 0.05s;
+    transform: translateY(2px);
+  }
+}
+
+.button {
+  will-change: transform;
+  transition: all 0.2s;
+
+  &__text, &__burger-line {
+    transition: all 0.2s;
+  }
+
+  &:hover, &:focus {
+    background: var.$yellow;
+
+    .button__text {
+      color: var.$black;
+    }
+
+    .button__burger-line {
+      background: var.$black;
+
+      &::before, &::after {
+        background: var.$black;
+      }
+    }
+  }
+
+  &:active {
+    transition: all 0.05s;
+    transform: scale(0.96);
+  }
+}
+
+.search__input {
+  transition: all 0.2s;
+  border-bottom: 3px solid transparent;
+
+  &:hover, &:focus {
+    border-color: var.$yellow;
+  }
+}
+
+.search__submit {
+  will-change: transform;
+  transition: all 0.2s;
+
+  &:hover, &:focus {
+    transform: translateY(-50%) scale(1.15);
+  }
+
+  &:active {
+    transition: all 0.05s;
+    transform: translateY(-50%) scale(0.95);
+  }
+}
+
+.cont-link {
+  will-change: transform;
+  transition: all 0.2s;
+
+  &__icon {
+    transition: all 0.2s;
+  }
+
+  &:hover, &:focus {
+    background: var.$deep-blue;
+
+    .cont-link__icon {
+      fill: var.$white;
+    }
+  }
+
+  &:active {
+    transition: all 0.05s;
+    transform: scale(0.94);
+  }
+}
+
+.solo-slider__btn {
+  will-change: transform;
+  transition: all 0.2s;
+
+  &-icon {
+    transition: all 0.2s;
+  }
+
+  &:hover, &:focus {
+    background: var.$trans-black;
+
+    .solo-slider__btn-icon {
+      stroke: var.$white;
+    }
+  }
+
+  &:active {
+    transition: all 0.06s;
+    transform: translateX(8px);
+  }
+
+  &--prev {
+
+    &:active {
+      transform: translateX(-8px);
+    }
+
+  }
+}
+
+.swiper-pagination-bullet {
+
+  &:hover, &:focus {
+    transform: scale(1.6);
+    background: var.$yellow content-box !important;
+    opacity: 1;
+    outline: none;
+    border: none;
+  }
+
+  &:active {
+    transition: all 0.05s;
+    transform: scale(0.9);
+  }
+}
+
+.solo-slider__link {
+  will-change: transform;
+  transition: all 0.2s;
+
+  &:hover, &:focus {
+    letter-spacing: 0.23em;
+    border-radius: 15px;
+  }
+
+  &:active {
+    transition: all 0.06s;
+    transform: scale(0.96) translateY(2px);
+  }
+}
+
+.detail-link {
+  will-change: transform;
+  transition: all 0.2s;
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -11px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: var.$yellow;
+    transition: all 0.2s;
+  }
+
+  &__img {
+    will-change: transform;
+    transition: all 0.2s;
+  }
+
+  &__text {
+    text-decoration: underline transparent;
+    transition: all 0.2s;
+  }
+
+  &:hover, &:focus {
+
+    &::after {
+      bottom: 0px;
+    }
+
+    .detail-link__text {
+      letter-spacing: 0.22em;
+      text-decoration: underline;
+    }
+    
+    .detail-link__img {
+      transform: scale(1.1);
+    }
+  }
+
+  &:active {
+    transition: all 0.06s;
+    transform: scale(0.97);
+  }
+}
+
+.popup__close-btn {
+  will-change: transform;
+  transition: all 0.2s;
+
+  &:hover, &:focus {
+    color: var.$danger
+  }
+
+  &:active {
+    transition: all 0.05s;
+    transform: scale(0.85);
+  }
+}
+
+.input-area__label {
+  will-change: transform;
+  transition: all 0.2s;
+}
+
+.input-area__input {
+  transition: all 0.2s;
+
+  &:hover, &:focus {
+    border-color: var.$aqua;
+  }
+
+  &:focus ~ .input-area__label {
+    transform: translate(16px, 12px);
+  }
+}
+
+.popup__button {
+  will-change: transform;
+  transition: all 0.2s;
+
+  &--submit {
+
+    &:hover, &:focus {
+      color: var.$white;
+      background: var.$blue;
+    }
+
+  }
+
+  &--reset {
+
+    &:hover, &:focus {
+      color: var.$white;
+      background: var.$danger;
+    }
+
+  }
+
+  &:active {
+    transition: all 0.05s;
+    transform: scale(0.96);
+  }
+}
+
+.popup__link {
+  transition: all 0.15s;
+  text-decoration: underline transparent;
+
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+
+  &:active {
+    transition: all 0.05s;
+    color: var.$aqua;
+  }
+}
+
+.popup__checkbox-label {
+  will-change: transform;
+  transition: all 0.2s;
+
+  &:hover, &:focus {
+    outline: none;
+    border-color: var.$green;
+  }
+
+  &:active {
+    transition: all 0.05s;
+    transform: scale(0.9);
+  }
+}
+
+.catalog__li {
+  transition: all 0.2s;
+
+  &-text, &-icon {
+    transition: all 0.2s;
+  }
+
+  &:hover, &:focus {
+    background: var.$deep-blue;
+    outline: none;
+
+    .catalog__li-text {
+      color: var.$white;
+    }
+
+    .catalog__li-icon {
+      stroke: var.$white;
+    }
+  }
+}
+
+.cat-desc__link {
+  will-change: transform;
+  transition: all 0.2s;
+  text-decoration: underline transparent;
+
+  &:hover, &:focus {
+    letter-spacing: 0.02em;
+    text-decoration: underline;
+  }
+
+  &:active {
+    transition: all 0.05s;
+    transform: translateY(2px);
+    color: var.$warning;
+  }
+}
+
+.cat-desc__partner {
+  will-change: transform;
+  transition: all 0.2s;
+
+  &:hover, &:focus {
+    transform: scale(1.04);
+  }
+
+  &:active {
+    transition: all 0.05s;
+    transform: scale(0.97);
+  }
+}
+
+.search-menu__variant {
+  transition: all 0.2s;
+
+  .search-menu__title, .search-menu__price {
+    transition: all 0.2s;
+  }
+
+  .search-menu__icon {
+    will-change: transform;
+    transition: all 0.2s;
+  }
+
+  &:hover, &:focus {
+    background: var.$blue;
+
+    .search-menu__title {
+      color: var.$white;
+    }
+
+    .search-menu__price {
+      color: var.$yellow;
+    }
+
+    .search-menu__icon {
+      transform: scale(1.15);
+    }
+  }
+}
+
+.search-menu__link {
+  will-change: transform;
+  transition: all 0.2s;
+
+  &:hover, &:focus {
+    background: var.$deep-blue;
+    color: var.$white;
+  }
+
+  &:active {
+    transition: all 0.05s;
+    transform: scale(0.94);
+  }
+}
