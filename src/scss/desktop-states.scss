@@ -36,7 +36,7 @@
 
     .location__trigger-text {
       color: var.$deep-blue;
-      border-color: var.$deep-blue;
+      text-decoration-color: var.$deep-blue;
     }
   }
 
@@ -129,7 +129,7 @@
   &:hover, &:focus {
     transform: scale(1.03);
     color: var.$deep-blue;
-    border-color: var.$deep-blue;
+    text-decoration-color: var.$deep-blue;
   }
 
   &:active {
@@ -535,5 +535,30 @@
   &:active {
     transition: all 0.05s;
     transform: scale(0.94);
+  }
+}
+
+.col-link {
+  overflow: hidden;
+
+  &__img {
+    will-change: transform;
+    transition: all 0.25s;
+  }
+
+  &__title {
+    transition: all 0.2s;
+  }
+
+  &:hover, &:focus {
+
+    .col-link__img {
+      transform: scale(1.1);
+    }
+
+    .col-link__title {
+      background: var.$aqua;
+      letter-spacing: 0.07em;
+    }
   }
 }

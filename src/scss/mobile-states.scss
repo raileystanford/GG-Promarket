@@ -284,3 +284,28 @@
     transform: scale(0.95);
   }
 }
+
+.col-link {
+  overflow: hidden;
+
+  &__img {
+    will-change: transform;
+    transition: all 0.1s;
+  }
+
+  &__title {
+    transition: all 0.1s;
+  }
+
+  &:active {
+
+    .col-link__img {
+      transform: scale(1.1);
+    }
+
+    .col-link__title {
+      background: var.$aqua;
+      letter-spacing: 0.07em;
+    }
+  }
+}
