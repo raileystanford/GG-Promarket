@@ -597,7 +597,7 @@ function searchSimulation() {
 
   let container = menu.querySelector('.search-menu__variants');
   let input = form.querySelector('.search__input');
-  let notif = document.querySelector('.notice')._notifications;
+  let notif = document.querySelector('.notice')?._notifications;
 
   let dictionary = [
 
@@ -785,6 +785,192 @@ function searchSimulation() {
 
 }
 
+function mobileNavUI() {
+
+  let navbar = document.querySelector('.navbar');
+  let media = window.matchMedia('(max-width: 800px)').matches;
+
+  if (!navbar || !media) return;
+
+  let search = navbar.querySelector('.search');
+  let burger = navbar.querySelector('.burger-btn');
+  let mobLogo = navbar.querySelector('.mob-logo');
+  let catalog = navbar.querySelector('.catalog');
+  let navbarInfo = navbar.querySelector('.navbar__info');
+  let navbarLinks = navbar.querySelector('.navbar__links');
+  let navLinks = navbar.querySelector('.nav-links');
+  let navbarControls = navbar.querySelector('.navbar__controls');
+
+  let exceptSelectors = '.location__trigger, .phone-select__trigger';
+  let topNavbar, mobMenu, backdrop;
+
+  createElements();
+  replaceElements();
+
+  document.addEventListener('click', (event) => {
+
+    let burger = event.target.closest('.burger-btn');
+    let isLink = event.target.closest('.mob-menu a');
+    let isButton = event.target.closest(`.mob-menu button:not(${exceptSelectors})`);
+    let isVoid = event.target.closest('.mob-menu-backdrop');
+
+    if (burger || isLink || isButton) {
+      openCloseMobMenu();
+    } else if (isVoid) {
+      openCloseMobMenu();
+    }
+
+  });
+
+  function openCloseMobMenu() {
+
+    mobMenu.classList.toggle('active');
+    backdrop.classList.toggle('active');
+
+    if (mobMenu.matches('.active')) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+  }
+
+  function replaceElements() {
+
+    if (mobLogo) topNavbar.append(mobLogo);
+    if (search) topNavbar.append(search);
+    if (burger) topNavbar.append(burger);
+
+    if (catalog) document.body.append(catalog);
+
+    if (navbarInfo) {
+      mobMenu.append(navbarInfo);
+      if (navLinks) navbarInfo.append(navLinks);
+    } 
+
+    navbar.innerHTML = '';
+    navbar.append(navbarLinks, navbarControls);
+    
+  }
+
+  function createElements() {
+
+    topNavbar = document.createElement('div');
+    topNavbar.classList.add('top-navbar');
+
+    mobMenu = document.createElement('div');
+    mobMenu.classList.add('mob-menu');
+
+    let btn = document.createElement('button');
+    btn.classList.add('mob-menu__close-btn');
+    btn.innerHTML = '&times;';
+
+    backdrop = document.createElement('div');
+    backdrop.classList.add('mob-menu-backdrop');
+
+    mobMenu.append(btn);
+    document.body.append(topNavbar, mobMenu, backdrop);
+
+  }
+
+}
+
+function enableScrollbar() {
+
+  let media = window.matchMedia('(max-width: 800px)').matches;
+
+  if (!media) return;
+
+  let elements = Array.from(document.querySelectorAll('.no-scrollbar'));
+  elements.forEach((item) => item.classList.remove('no-scrollbar'));
+
+}
+
+function searchFieldDemoQueries() {
+
+  let input = document.querySelector('.search__input');
+
+  if (!input) return;
+
+  let queries = [ 'Раковина', 'Унитаз', 'Биде', 'Сушилка', 'Трап', 'Ванна', 'Смеситель', 'Умывальник', 'Плитка', 'Душевая кабинка', 'Писуар' ];
+
+  let word = '';
+  let currentLetterIndex = 0;
+  let currentQuery = 0;
+  let queryTimer, mainTimer;
+
+  runAutoQueries();
+
+  input.addEventListener('focus', (event) => {
+
+    stopAutoQueries();
+
+  });
+
+  input.addEventListener('blur', (event) => {
+
+    runAutoQueries();
+
+  })
+
+  function stopAutoQueries() {
+
+    clearInterval(queryTimer);
+    clearTimeout(mainTimer);
+    input.placeholder = '';
+    word = '';
+    currentLetterIndex = 0;
+    currentQuery = 0;
+
+  }
+
+  function runAutoQueries() {
+
+    input.placeholder = 'Что вы ищете?';
+
+    if (input.value.trim()) return;
+
+    mainTimer = setTimeout(() => {
+
+      queryTimer = setInterval(() => {
+
+        if (input.matches('.invalid')) {
+          stopAutoQueries();
+          input.placeholder = 'Что вы ищете?';
+          return;
+        } 
+
+        let query = queries[currentQuery];
+
+        if (!query) {
+          currentQuery = 0;
+          return;
+        } 
+
+        let letter = query[currentLetterIndex];
+
+        if (letter) {
+
+          word += letter;
+          input.placeholder = word;
+          currentLetterIndex++;
+
+        } else {
+
+          input.placeholder = '';
+          word = '';
+          currentQuery++;
+          currentLetterIndex = 0
+
+        }
+        
+      }, 350);
+      
+    }, 3000);
+
+  }
+
+}
 
 
 
@@ -792,12 +978,15 @@ function searchSimulation() {
 
 
 
+mobileNavUI();
 focusStateFix('.swiper-pagination-bullet', '.catalog__li');
 locationSelect();
 showAdditionalPhones();
 formValidatorEventsHandler();
 catalogHandler();
 searchSimulation();
+enableScrollbar();
+searchFieldDemoQueries();
 
 
 

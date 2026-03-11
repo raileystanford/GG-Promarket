@@ -1,3 +1,286 @@
 @use './modules/_variables.scss' as var;
 @use './modules/_templates.scss' as *;
 @use './modules/_mixins.scss' as mix;
+
+
+.mob-logo, .burger-btn {
+  will-change: transform;
+  transition: all 0.2s;
+
+  &:active {
+    transition: all 0.05s;
+    transform: scale(0.9);
+  }
+}
+
+.search__submit {
+  will-change: transform;
+  transition: all 0.2s;
+
+  &:active {
+    transition: all 0.05s;
+    transform: translateY(-50%) scale(0.9);
+  }
+}
+
+.search-menu__link {
+  transition: all 0.05s;
+
+  &:active {
+    background: var.$deep-blue;
+    color: var.$white;
+  }
+}
+
+.search-menu__variant {
+  transition: all 0.05s;
+
+  .search-menu__title, .search-menu__price {
+    transition: all 0.05s;
+  }
+
+  .search-menu__icon {
+    will-change: transform;
+    transition: all 0.05s;
+  }
+
+  &:active {
+    background: var.$blue;
+
+    .search-menu__title {
+      color: var.$white;
+    }
+
+    .search-menu__price {
+      color: var.$yellow;
+    }
+
+    .search-menu__icon {
+      transform: scale(1.15);
+    }
+  }
+}
+
+.solo-slider__link {
+  will-change: transform;
+  transition: all 0.2s;
+
+  &:active {
+    transition: all 0.05s;
+    transform: scale(0.96) translateY(2px);
+  }
+}
+
+.solo-slider__btn {
+  will-change: transform;
+  transition: all 0.15s;
+
+  &-icon {
+    transition: all 0.15s;
+  }
+
+  &:active {
+    background: var.$trans-black;
+    transform: translateX(8px);
+
+    .solo-slider__btn-icon {
+      stroke: var.$white;
+    }
+  }
+
+  &--prev {
+
+    &:active {
+      transform: translateX(-8px);
+    }
+
+  }
+}
+
+.detail-link {
+  transition: all 0.15s;
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -11px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: var.$yellow;
+    transition: all 0.15s;
+  }
+
+  &__img {
+    will-change: transform;
+    transition: all 0.15s;
+  }
+
+  &__text {
+    text-decoration: underline transparent;
+    transition: all 0.15s;
+  }
+
+  &:active {
+
+    &::after {
+      bottom: 0px;
+    }
+
+    .detail-link__text {
+      letter-spacing: 0.22em;
+      text-decoration: underline;
+    }
+    
+    .detail-link__img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.button {
+
+  &:not([data-cat-trig]):active {
+    background: var.$yellow;
+
+    .button__text {
+      color: var.$black;
+    }
+  }
+}
+
+.catalog__li {
+  transition: all 0.2s;
+
+  &-text, &-icon {
+    transition: all 0.2s;
+  }
+}
+
+.cat-desc__link {
+  transition: all 0.2s;
+  text-decoration: underline transparent;
+
+  &:active {
+    transition: all 0.05s;
+    color: var.$warning;
+    letter-spacing: 0.02em;
+    text-decoration: underline;
+  }
+}
+
+.cat-desc__partner {
+  will-change: transform;
+  transition: all 0.15s;
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.cont-link {
+  transition: all 0.15s;
+
+  &__icon {
+    transition: all 0.15s;
+  }
+
+  &:active {
+    background: var.$deep-blue;
+
+    .cont-link__icon {
+      fill: var.$white;
+    }
+  }
+}
+
+.swiper-pagination-bullet {
+  transition: all 0.15s;
+
+  &:active {
+    background: var.$yellow content-box !important;
+    outline: none;
+    border: none;
+  }
+}
+
+.search__input {
+  transition: all 0.2s;
+  border-bottom: 3px solid transparent;
+
+  &:hover, &:focus {
+    border-color: var.$yellow;
+  }
+}
+
+.popup__close-btn {
+  will-change: transform;
+  transition: all 0.15s;
+
+  &:active {
+    color: var.$danger;
+    transform: scale(0.85);
+  }
+}
+
+.input-area__label {
+  will-change: transform;
+  transition: all 0.2s;
+}
+
+.input-area__input {
+  transition: all 0.2s;
+
+  &:focus {
+    border-color: var.$aqua;
+  }
+
+  &:focus ~ .input-area__label {
+    transform: translate(16px, 12px);
+  }
+}
+
+.popup__button {
+  will-change: transform;
+  transition: all 0.15s;
+
+  &--submit {
+
+    &:active {
+      transform: scale(0.96);
+      color: var.$white;
+      background: var.$blue;
+    }
+
+  }
+
+  &--reset {
+
+    &:active {
+      transform: scale(0.96);
+      color: var.$white;
+      background: var.$danger;
+    }
+
+  }
+}
+
+.popup__link {
+  text-decoration: underline transparent;
+
+  &:active {
+    text-decoration: underline;
+    color: var.$aqua;
+  }
+}
+
+.logotype {
+  will-change: transform;
+  transition: all 0.1s;
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

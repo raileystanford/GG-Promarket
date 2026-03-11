@@ -25,6 +25,7 @@ A {
   text-decoration: none; 
   outline: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 A:hover, A:focus {
@@ -79,6 +80,7 @@ BUTTON {
   padding: 0;
   cursor: pointer;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 BUTTON * {
